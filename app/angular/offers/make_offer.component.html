@@ -1,0 +1,252 @@
+<!--///
+/// MIKASO INC. ("COMPANY") CONFIDENTIAL
+/// Unpublished Copyright (c) 2016 Mikaso, Inc., All Rights Reserved.
+///
+/// NOTICE:  All information contained herein is, and remains the property of COMPANY. The intellectual and technical concepts contained
+/// herein are proprietary to COMPANY and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
+/// Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
+/// from COMPANY.  Access to the source code contained herein is hereby forbidden to anyone except current COMPANY employees, managers or contractors who have executed
+/// Confidentiality and Non-disclosure agreements explicitly covering such access.
+///
+/// The copyright notice above does not evidence any actual or intended publication or disclosure of  this source code, which includes
+/// information that is confidential and/or proprietary, and is a trade secret, of  COMPANY.   ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
+/// OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
+/// LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
+/// TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
+///-->
+
+<div class="page-login" id="page-top">
+	<div class="wrapper">
+		<header-comp></header-comp>
+
+		<div id="page-content-login">
+			<div class="col-sm-12 col-xs-12" style="background-color:white;">
+				<br><br>
+				<div class="container">
+					<form #form="ngForm" (ngSubmit)="logForm(form.value)">
+						<h2>You are making an offer on: {{home.address}} {{home.city}}, {{home.state}} {{home.zip_code}}</h2>
+						<hr>
+						<br>
+
+						<!-- PDF OR MIKASO FORM? -->
+						<div [hidden]="!show_form_choice">
+							<h3 style="text-align:center;">Choose one of the following options:</h3>
+							<p style="text-align:center;">(Hover over each option for additional details)</p>
+							<br>
+							<div style="text-align:center;">
+								<button (click)="useMikaso()" pTooltip="You can use Mikaso's intelligent, simple form system to create a legally binding purchase offer." tooltipPosition="top" class="btn btn-lg btn-primary">Create offer with Mikaso</button>
+								<br><br>
+								<button (click)="uploadPDF()" pTooltip="If you would like to upload an already completed purchase offer contract, you can upload a PDF." tooltipPosition="top" class="btn btn-lg btn-primary">Upload Offer Contract (PDF)</button>
+								<div *ngIf="showPDF">
+									<input id="pdfUploader" style="display: none;" type="file" class="file" required multiple data-show-upload="false" data-show-caption="false" data-show-remove="false"
+										accept="application/pdf" data-browse-class="btn btn-default" data-browse-label="Add Files" name="photo_gallery"
+										ngModel>
+									<label for="pdfUploader">
+										<img src="app/images/upload.png" alt="" class="image-upload-icon">Add PDF
+									</label>
+								</div>
+							</div>
+						</div>
+						<br>
+						<!--TERMS OF USE-->
+						<div [hidden]="!show_legal">
+							<h3>(Step 1) - Before continuing, please read and agree to the following Terms of Service</h3>
+							<br>
+							<div class="well">
+								<p>You understand and agree that Mikaso is not a licensed real estate broker, brokerage or real estate agent and as
+									such You understand and agree that Mikaso does not represent You in any real estate transaction. You further agree
+									that Mikaso has no liability to You or any third party in connection with the purchase or sale of Your Property.
+									Mikaso provides software tools for home buyers and sellers that desire to buy or sell homes on their own. You understand
+									and agree that all Services are intended to simplify the home buying or selling process, but that the Services do
+									not and cannot offer advice, direction, or definitive answers to questions that You may encounter during the home
+									buying or home selling process. All information, data, statistics, comparable sales, tips, tricks and responses
+									to frequently asked questions are provided for information purposes only and do not constitute advice or direction
+									for Your transaction. Only You can decide, and You are fully responsible for how such materials and information
+									are used. You alone are responsible for all actions taken and all contracts transmitted in connection with the purchase
+									or sale of Your home. You understand and agree that Mikaso is not negotiating, generating, drafting or completing
+									any contracts on Your behalf. Mikaso cannot and does not make any decisions for you and it is Your responsibility
+									to verify all contract drafts and actions that you take are accurate and in Your best interest before signing any
+									contracts or taking any other actions. You agree that all forms, purchase agreements, disclosure statements, and
+									other documents transmitted by or through the Services are drafted by You, and that You alone are responsible for
+									the content thereof, You are solely responsible for complying with the terms and conditions contained in any such
+									contract, including meeting any deadlines and the consequences of any breach or nonperformance under any such contracts.</p>
+							</div>
+							<br>
+							<div class="pull-right">
+								<p-toggleButton (click)="agreeToTerms()" [(ngModel)]="legal_agree" onLabel="I agree." offLabel="I agree." onIcon="fa-check-square"
+									offIcon="fa-square" [style]="{'width':'200px'}" name="agreement"></p-toggleButton>
+							</div>
+						</div>
+
+						<!--MAKE OFFER FORM (UTAH)-->
+						<div [hidden]="!show_offer">
+							<h3>(Step 2) - Fill our this form carefully to specify the details of your offer.</h3>
+							<p>If you're unsure about what a question means, hover over it to see more details</p>
+							<br>
+							<!--Offer Summary-->
+							<h4>Offer Summary</h4>
+							<hr>
+							<label placement="top" ngbTooltip="It's important that you enter your full legal name.">
+								Full Name</label>
+							<input type="text" class="form-control" name="legal_name" ngModel required/>
+							<br>
+							<label placement="top" ngbTooltip="Please list the dollar amount you're offering to pay for the home.">
+								Purchase Price</label>
+							<input type="number" class="form-control" name="price_cents" ngModel required/>
+							<br>
+							<label placement="top" ngbTooltip="Earnest money is a deposit made to a seller showing the buyer's good faith in a transaction. Often used in real estate transactions, earnest money allows the buyer additional time when seeking financing. Earnest money is typically held jointly by the seller and buyer in a trust or escrow account.">
+								Earnest Money Deposit Amount</label>
+							<input type="number" class="form-control" name="earnest_money_cents" ngModel required/>
+							<br>
+							<label placement="top" ngbTooltip="If you've been pre-approved for a mortgage, enter the maximum value you've qualified for.">
+								Pre-Approved Mortgage Value</label>
+							<input type="number" class="form-control" name="pre_approved_mortgage_value_cents" ngModel required/>
+							<br>
+							<label placement="top" ngbTooltip="The down payment is the purchase price minus the mortgage and earnest money. It is typically paid at signing. A down payment of at least 20% of the purchase price may let you avoid mortgage insurance.">
+								Down Payment</label>
+							<input type="number" class="form-control" name="down_payment_cents" ngModel required/>
+
+							<!--Contract Details-->
+							<br><br>
+							<h4>Additional Offer Details</h4>
+							<hr>
+							<label>Inclusions & Exclusions</label>
+							<p>Unless excluded herein, this sale includes the following items if presently owned and in place on the Property: plumbing,
+								heating, air conditioning fixtures and equipment; ovens, ranges and hoods; cook tops; dishwashers; ceiling fans;
+								water heaters; light fixtures and bulbs; bathroom fixtures and bathroom mirrors; curtains, draperies, rods, window
+								blinds and shutters; window and door screens; storm doors and windows; awnings; satellite dishes; affixed carpets;
+								automatic garage door openers and accompanying transmitters; security system; fencing and any landscaping.
+							</p>
+							<br>
+							<label placement="top" ngbTooltip="Inclusions refer to personal property (not affixed) that the seller will leave.">
+								Additional Inclusions</label>
+							<input type="text" class="form-control" name="additional_inclusions" ngModel required/>
+							<br>
+							<label placement="top" ngbTooltip="Exlusions refer to items that are specifically not included with the sale of the home.">
+								Exclusions</label>
+							<input type="text" class="form-control" name="exclusions" ngModel required/>
+							<br>
+							<label placement="top" ngbTooltip="The down payment is the purchase price minus the mortgage and earnest money. It is typically paid at signing. A down payment of at least 20% of the purchase price may let you avoid mortgage insurance.">
+								New Loan Amount</label>
+							<input type="number" class="form-control" name="new_loan_amount_cents" ngModel required/>
+							<br>
+							<label placement="top" ngbTooltip="The party responsible for assements will be required to pay and schedule the appropriate home assesments.">
+								Party Responsible for Assessments</label>
+							<br>
+							<p-dropdown [options]="buyer_seller" [style]="{'width':'150px'}" name="responsible_party" ngModel></p-dropdown>
+							<br><br>
+							<label placement="top" ngbTooltip="This will be the date that your contract is finalized and the seller turns the home over to you.">
+								Date of Possession</label>
+							<br>
+							<p-calendar [(ngModel)]="date2" name="date_of_possesion" ngModel></p-calendar> {{date2|date}}
+							<br><br>
+
+							<label placement="top" ngbTooltip="The seller will provide you with the following documents if they are applicable: A property condition disclosure, A commitment for Title Insurance, A copy of any Restrictive Covenants affecting the Property, A copy of the most recent minutes, budget, and financial statement for the HOA, A copy of any lease, rental, and property management agreements affecting the property that won't expire before closing, evidence of water rights, and written notice of any claims or conditions known to the seller regarding environmental problems or building/zoning violations. If there are any additional disclosures you need, please list them here.">
+								Additional Seller Disclosures</label>
+							<input type="text" class="form-control" name="disclosures_not_used_I_think" ngModel required/>
+							<br>
+
+							<label placement="top" ngbTooltip="Do you wish to include a contingency on your offer that allows you to conduct additional due diligence on the property?">
+								Due Diligence Condition</label>
+							<p>Do you wish to include a contingency on your offer that allows you to conduct additional due diligence on the property?</p>
+							<p-toggleButton [style]="{'width':'150px'}" name="due_diligence_condition" ngModel></p-toggleButton>
+							<br><br><br>
+
+							<label placement="top" ngbTooltip="Do you wish to include a contingency on your offer that allows you to rescind the offer if the home appraises for a value less than the Purchase Price?">
+								Appraisal Condition</label>
+							<p>Do you wish to include a contingency on your offer that allows you to rescind the offer if the home appraises for
+								a value less than the Purchase Price?</p>
+							<p-toggleButton [style]="{'width':'150px'}" name="appraisal_condition" ngModel></p-toggleButton>
+							<br><br><br>
+
+							<label placement="top" ngbTooltip="Is your offer contingent on obtaining a loan?">
+								Financing Condition</label>
+							<p>Is your offer contingent on obtaining a loan?</p>
+							<p-toggleButton [style]="{'width':'150px'}" name="financing_condition" ngModel></p-toggleButton>
+							<br><br><br>
+
+							<label placement="top" ngbTooltip="Will you be applying for a FHA or VA loan?">
+								FHA/VA Loan</label>
+							<p>Will you be applying for a FHA or VA loan?</p>
+							<br>
+							<p-toggleButton [style]="{'width':'150px'}" name="fha_va_loan" ngModel></p-toggleButton>
+							<br><br><br>
+
+							<label placement="top" ngbTooltip="Is there another addendum you need to add?">
+								Additional Addenda</label>
+							<p>Is there another addendum you need to add?</p>
+							<br>
+							<p-toggleButton [style]="{'width':'150px'}"></p-toggleButton>
+							<br><br><br>
+
+							<label placement="top" ngbTooltip="Should the purchase include a home warranty plan?">
+								Home Warranty</label>
+							<p>Should the purchase include a home warranty plan?</p>
+							<p-toggleButton [style]="{'width':'150px'}" name="home_warranty_plan" ngModel></p-toggleButton>
+							<br><br><br>
+
+							<label placement="top" ngbTooltip="Who will be responsible for ordering the home warranty?">
+								Home Warranty Order Party</label>
+							<br>
+							<p-dropdown [options]="buyer_seller" [style]="{'width':'150px'}" name="home_warranty_order_party" ngModel></p-dropdown>
+							<br><br>
+
+							<label placement="top" ngbTooltip="Who will be responsible for selecting the company that will provide the home warranty?">
+								Home Warranty Selection Party</label>
+							<br>
+							<p-dropdown [options]="buyer_seller" [style]="{'width':'150px'}" name="home_warranty_selection_party" ngModel></p-dropdown>
+							<br><br>
+
+							<label placement="top" ngbTooltip="What will the maximum cost of the home warranty be?">
+								Home Warranty Maximum Cost</label>
+							<input type="number" class="form-control" name="home_warranty_max_cents" ngModel required/>
+							<br>
+
+							<label placement="top" ngbTooltip="Who will be responsible for paying for the home warranty?">
+								Home Warranty Payment Party</label>
+							<br>
+							<p-dropdown [options]="buyer_seller" [style]="{'width':'150px'}" name="home_warranty_payment_party" ngModel></p-dropdown>
+							<br><br>
+
+							<br>
+							<h4>Important Deadlines</h4>
+							<hr>
+							<label placement="top" ngbTooltip="What day will the seller be required to submit their disclosures?">
+								Seller Disclosure Deadline</label>
+							<br>
+							<p-calendar [(ngModel)]="date3" name="seller_disclosure_deadline" ngModel></p-calendar> {{date3|date}}
+							<br><br>
+
+							<label placement="top" ngbTooltip="What day will the buyer be required to complete their due diligence by?">
+								Due Diligence Deadline</label>
+							<br>
+							<p-calendar [(ngModel)]="date4" name="due_diligence_deadline" ngModel></p-calendar> {{date4|date}}
+							<br><br>
+
+							<label placement="top" ngbTooltip="What day must the appraisal and the financing be finalized?">
+								Financing & Appraisal Deadline</label>
+							<br>
+							<p-calendar [(ngModel)]="date5" name="financing_appraisal_deadline" ngModel></p-calendar> {{date5|date}}
+							<br><br><br><br>
+
+							<!--<span class="ffs-bs"><button type="submit" (click)="continue()" class="btn btn-large btn-primary">Continue</button></span>-->
+							<span class="ffs-bs"><button type="submit" class="btn btn-large btn-primary">Continue</button></span>
+
+						</div>
+
+						<!--CONFIRM OFFER-->
+						<div [hidden]="!show_confirmation">
+							<br>
+							<ngb-alert [dismissible]="false" [type]="success">
+								<strong>Offer Submitted!</strong> Visit 'My Offers' to check the status of your offer.
+							</ngb-alert>
+							<br>
+						</div>
+					</form>
+				</div>
+				<br><br><br>
+			</div>
+		</div>
+		<footer-comp></footer-comp>
+	</div>
+</div>

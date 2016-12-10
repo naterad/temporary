@@ -1,0 +1,292 @@
+<!--///
+/// MIKASO INC. ("COMPANY") CONFIDENTIAL
+/// Unpublished Copyright (c) 2016 Mikaso, Inc., All Rights Reserved.
+///
+/// NOTICE:  All information contained herein is, and remains the property of COMPANY. The intellectual and technical concepts contained
+/// herein are proprietary to COMPANY and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
+/// Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
+/// from COMPANY.  Access to the source code contained herein is hereby forbidden to anyone except current COMPANY employees, managers or contractors who have executed
+/// Confidentiality and Non-disclosure agreements explicitly covering such access.
+///
+/// The copyright notice above does not evidence any actual or intended publication or disclosure of  this source code, which includes
+/// information that is confidential and/or proprietary, and is a trade secret, of  COMPANY.   ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
+/// OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
+/// LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
+/// TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
+///-->
+
+
+<div class="page-search" id="page-top">
+	<div class="wrapper">
+		<header-comp></header-comp>
+		<div id="page-content-search">
+			<div class="container">
+				<div class="wide_container_2">
+					<div class="tabs">
+						<header class="col-md-12 col-xs-12 no-pad">
+							<div class="location-map col-sm-4 col-xs-4">
+								<div class="input-group">
+									<!-- <input type="text" class="form-control" id="address-map" name="address" placeholder="{{ searchLocation }}"> -->
+									<input id="search_field" value="text" class="form-control" placeholder="{{ searchLocation }}" (keyup)="onKey($event)" name="input"
+										ngModel>
+									<i class="fa fa-search" (click)="searchSubmit()"></i>
+								</div>
+							</div>
+
+							<div class="select-block col-sm-2 col-xs-2">
+								<div ngbDropdown class="d-inline-block">
+									<button *ngIf="bedsParam > 0" class="search-button" id="dropdownMenu1" ngbDropdownToggle>Bedrooms: {{bedsParam}}+</button>
+									<button *ngIf="bedsParam == 0" class="search-button" id="dropdownMenu1" ngbDropdownToggle>Bedrooms</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+										<button class="search-dropdown-item" (click)="changeBedsParam(0)">Any</button>
+										<button class="search-dropdown-item" (click)="changeBedsParam(1)">1 +</button>
+										<button class="search-dropdown-item" (click)="changeBedsParam(2)">2 +</button>
+										<button class="search-dropdown-item" (click)="changeBedsParam(3)">3 +</button>
+										<button class="search-dropdown-item" (click)="changeBedsParam(4)">4 +</button>
+										<button class="search-dropdown-item" (click)="changeBedsParam(5)">5 +</button>
+										<button class="search-dropdown-item" (click)="changeBedsParam(6)">6 +</button>
+									</div>
+								</div>
+							</div>
+							<div class="select-block col-sm-2 col-xs-2">
+								<div ngbDropdown class="d-inline-block">
+									<button *ngIf="bathsParam > 0" class="search-button" id="dropdownMenu1" ngbDropdownToggle>Bathrooms: {{bathsParam}}+</button>
+									<button *ngIf="bathsParam == 0" class="search-button" id="dropdownMenu1" ngbDropdownToggle>Bathrooms</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+										<button class="search-dropdown-item" (click)="changeBathsParam(0)">Any</button>
+										<button class="search-dropdown-item" (click)="changeBathsParam(1)">1 +</button>
+										<button class="search-dropdown-item" (click)="changeBathsParam(2)">2 +</button>
+										<button class="search-dropdown-item" (click)="changeBathsParam(3)">3 +</button>
+										<button class="search-dropdown-item" (click)="changeBathsParam(4)">4 +</button>
+										<button class="search-dropdown-item" (click)="changeBathsParam(5)">5 +</button>
+									</div>
+								</div>
+							</div>
+							<div class="select-block col-sm-2 col-xs-2">
+								<div ngbDropdown class="d-inline-block">
+									<button *ngIf="sqftParam > 0" class="search-button" id="dropdownMenu1" ngbDropdownToggle>Sq Ft: {{sqftParam}}+</button>
+									<button *ngIf="sqftParam == 0" class="search-button" id="dropdownMenu1" ngbDropdownToggle>Sq Ft</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+										<button class="search-dropdown-item" (click)="changeSqFtParam(0)">Any</button>
+										<button class="search-dropdown-item" (click)="changeSqFtParam(1000)">1000 +</button>
+										<button class="search-dropdown-item" (click)="changeSqFtParam(2000)">2000 +</button>
+										<button class="search-dropdown-item" (click)="changeSqFtParam(3000)">3000 +</button>
+										<button class="search-dropdown-item" (click)="changeSqFtParam(4000)">4000 +</button>
+										<button class="search-dropdown-item" (click)="changeSqFtParam(5000)">5000 +</button>
+									</div>
+								</div>
+							</div>
+							<div class="select-block col-sm-2 col-xs-2">
+								<div ngbDropdown class="d-inline-block">
+									<button *ngIf="yearBuiltParam > 0" class="search-button" id="dropdownMenu1" ngbDropdownToggle>Year Built: {{yearBuiltParam}}+</button>
+									<button *ngIf="yearBuiltParam == 0" class="search-button" id="dropdownMenu1" ngbDropdownToggle>Year Built</button>
+									<div class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+										<button class="search-dropdown-item" (click)="changeYearBuiltParam(0)">Any</button>
+										<button class="search-dropdown-item" (click)="changeYearBuiltParam(1950)">1950 +</button>
+										<button class="search-dropdown-item" (click)="changeYearBuiltParam(1960)">1960 +</button>
+										<button class="search-dropdown-item" (click)="changeYearBuiltParam(1970)">1970 +</button>
+										<button class="search-dropdown-item" (click)="changeYearBuiltParam(1980)">1980 +</button>
+										<button class="search-dropdown-item" (click)="changeYearBuiltParam(1990)">1990 +</button>
+										<button class="search-dropdown-item" (click)="changeYearBuiltParam(2000)">2000 +</button>
+										<button class="search-dropdown-item" (click)="changeYearBuiltParam(2010)">2010 +</button>
+										<button class="search-dropdown-item" (click)="changeYearBuiltParam(2015)">2015 +</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="options-overlay col-md-offset-4 col-sm-offset-5 col-sm-7" id="hidden_content" style="display: none;">
+								<div class="row">
+									<div class="col-xs-6 top-mrg">
+										<div class="internal-container features">
+											<div class="form-group">
+												<label>Minimum Square Footage:</label>
+												<input type="text" class="form-control" placeholder="Enter an Amount">
+											</div>
+											<label>Building Features:</label>
+											<section class="block">
+												<section>
+													<ul class="submit-features">
+														<li>
+															<div class="checkbox"><label><input type="checkbox">Elevator</label></div>
+														</li>
+														<li>
+															<div class="checkbox"><label><input type="checkbox">Gym</label></div>
+														</li>
+														<li>
+															<div class="checkbox"><label><input type="checkbox">Pool</label></div>
+														</li>
+														<li>
+															<div class="checkbox"><label><input type="checkbox">Lorem Ipsum</label></div>
+														</li>
+													</ul>
+												</section>
+											</section>
+										</div>
+									</div>
+									<div class="col-xs-6 top-mrg">
+										<div class="internal-container features">
+											<label>Property Features:</label>
+											<section class="block">
+												<section>
+													<ul class="submit-features">
+														<li>
+															<div class="checkbox"><label><input type="checkbox">Air conditioning</label></div>
+														</li>
+														<li>
+															<div class="checkbox"><label><input type="checkbox">Balcony</label></div>
+														</li>
+														<li>
+															<div class="checkbox"><label><input type="checkbox">Garage Internet</label></div>
+														</li>
+														<li>
+															<div class="checkbox"><label><input type="checkbox">Dishwasher</label></div>
+														</li>
+														<li>
+															<div class="checkbox"><label><input type="checkbox">Washer Mashine</label></div>
+														</li>
+														<li>
+															<div class="checkbox"><label><input type="checkbox">Some Lorem Ipsum</label></div>
+														</li>
+													</ul>
+												</section>
+											</section>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- options-overlay -->
+						</header>
+						<!-- end header -->
+						<div class="tab-content">
+							<div id="tab1" class="tab" style="display: block;">
+								<div class="sidebar col-sm-6 col-xs-12">
+									<!-- Map -->
+									<div id="map"></div>
+									<!-- end Map -->
+								</div>
+								<!-- sidebar -->
+								<div id="scroll-container" class="content col-sm-6 col-xs-12">
+									<!-- Range slider -->
+									<div class="col-xs-12">
+										<div class="row">
+											<form method="post">
+												<div class="col-md-3 col-sm-4">
+													<div class="form-inline">
+														<label class="top-indent">Price Range:</label>
+													</div>
+												</div>
+												<div class="col-md-9 col-sm-8">
+													<div class="form-group">
+														<div class="" style="margin-top:30px;">															
+															<p>{{rangeValues[0] | currency:'USD':true:'1.0-0'}} - {{rangeValues[1] | currency:'USD':true:'1.0-0'}}</p>
+															<p-slider [(ngModel)]="rangeValues" [step]="10000" [range]="true" [min]="0" [max]="slider_max" name="price_range" (onChange)="changeSlider(rangeValues)"></p-slider>
+															  
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+										<!-- row -->
+									</div>
+									<!-- explore_grid -->
+									<!-- End Range slider -->
+
+									<div class="wide-2">
+										<div class="col-xs-12">
+											<div class="row">
+												<div *ngFor="let home of homes;  let i=index">
+													<div *ngIf="home.price_cents/100>=rangeValues[0] && home.price_cents/100<=rangeValues[1] && home.bedrooms/100>=bedsParam && home.bathrooms/100>=bathsParam && home.square_feet>=sqftParam && home.year_built>=yearBuiltParam">
+														<div class="col-md-6 col-xs-6 col-sm-6 prop">
+															<div class="wht-cont">
+																<!--<div class="exp-img-2" [style.background-image]="'url(data:image/jpg;base64,'+ home.primary_image +')'">-->
+																<div class="exp-img-2" [style.background-image]="'url(' + home.primary_image + ')'">
+																	<span class="filter"></span>
+																	<span class="ffs-bs"><label for="op" class="btn btn-small btn-primary">browse photos</label></span>
+																	<div class="overlay">
+																		<div class="img-counter"></div>
+																	</div>
+																</div>
+																<div class="item-title">
+																	<h4 ng-if="$index != 0" (click)="gotoProperty(home)">{{home.address}}</h4>
+																	<p class="team-color">{{home.city + ", " + home.state | truncate : 30 }}</p>
+																	<div class="col-md-7 col-sm-7 col-xs-7">
+																		<p>{{ homeTypes[home.home_type_id] + " - " + home.bedrooms/100 + " bd" }}</p>
+																	</div>
+																	<div class="col-md-5 col-sm-5 col-xs-5">
+																		<p>{{home.square_feet + " ft"}}<span class="rank">2</span></p>
+																	</div>
+																	<div class="col-md-7 col-sm-7 col-xs-7 lft-brd"></div>
+																	<div class="col-md-5 col-sm-5 col-xs-5 lft-brd"></div>
+																</div>
+																<hr>
+																<div class="item-title btm-part">
+																	<div class="row">
+																		<div class="col-md-8 col-sm-8 col-xs-8">
+																			<p>{{home.price_cents/100 | currency:'USD':true:'1.0'}}</p>
+																			<p class="team-color">{{ home.status | uppercase }}</p>
+																		</div>
+																		<div class="col-md-4 col-sm-4 col-xs-4 favorite">
+																			<div class="bookmark" data-bookmark-state="empty">
+																				<span class="title-add">Add to Favorites</span>
+																			</div>
+																			<div class="compare" data-compare-state="empty">
+																				<span class="plus-add">Add to Comparisons</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<br>
+											<div class="loader" [hidden]="!loading"></div>
+											<div class="more-homes" [hidden]="moreHomes">That's all for now!</div>
+											<!-- end row -->
+										</div>
+										<!-- end container -->
+									</div>
+									<!-- end wide-2 -->
+								</div>
+								<!-- content -->
+							</div>
+						</div>
+						<!-- tab-content -->
+					</div>
+					<!-- tabs -->
+				</div>
+			</div>
+		</div>
+		<!-- end Page Content -->
+
+		<!-- <footer-comp></footer-comp> -->
+	</div>
+
+	<!-- Modal login, register, custom gallery -->
+	<div id="login-modal-open"></div>
+	<div id="register-modal-open"></div>
+	<div class="custom-galery">
+		<input class="no-icheck gal" type="checkbox" id="op">
+		<div class="lower"></div>
+		<div class="overlay overlay-hugeinc">
+			<label for="op"></label>
+			<nav>
+				<!-- Owl carousel -->
+				<div class="owl-carousel owl-theme carousel-full-width owl-demo-3">
+					<div class="item" style="background-image: url(http://placehold.it/950X800);"></div>
+					<div class="item" style="background-image: url(http://placehold.it/800X650);"></div>
+				</div>
+				<!-- End Owl carousel -->
+			</nav>
+		</div>
+	</div>
+
+
+	<script>
+		// coordinates for current location
+		var _latitude = 34.0372494;
+		var _longitude = -118.4851257;
+		createHomepageGoogleMap(_latitude,_longitude);
+	</script>
+</div>

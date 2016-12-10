@@ -1,0 +1,72 @@
+<!--///
+/// MIKASO INC. ("COMPANY") CONFIDENTIAL
+/// Unpublished Copyright (c) 2016 Mikaso, Inc., All Rights Reserved.
+///
+/// NOTICE:  All information contained herein is, and remains the property of COMPANY. The intellectual and technical concepts contained
+/// herein are proprietary to COMPANY and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
+/// Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
+/// from COMPANY.  Access to the source code contained herein is hereby forbidden to anyone except current COMPANY employees, managers or contractors who have executed
+/// Confidentiality and Non-disclosure agreements explicitly covering such access.
+///
+/// The copyright notice above does not evidence any actual or intended publication or disclosure of  this source code, which includes
+/// information that is confidential and/or proprietary, and is a trade secret, of  COMPANY.   ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
+/// OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
+/// LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
+/// TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
+///-->
+
+<div class="page-login" id="page-top">
+  <header-comp></header-comp>
+	   <div class="col-sm-12 col-xs-12" style="background-color:white; padding-top:70px; padding-bottom:400px;">
+        <div class="col-sm-4"></div>
+		      <div class="col-sm-4" style="text-align:center;">
+            <form #form="ngForm" (ngSubmit)="logForm(form.value)">
+              <div class="input-group">
+                <label>Zillow</label>
+                <input type="text" class="form-control" name="zillow_url" placeholder="home url" ngModel>
+                <input type="text" class="form-control" name="zillow_email" placeholder="seller email" ngModel>
+              </div>
+              <div class="input-group">
+                <label>KSL</label>
+                <input type="text" class="form-control" name="ksl_url" placeholder="home url" ngModel>
+                <input type="text" class="form-control" name="ksl_email" placeholder="seller email" ngModel>
+              </div>
+              <span class="ffs-bs"><button type="submit" class="btn btn-large btn-primary">Add Home</button></span>
+			  <span *ngIf="sending">...Sending...</span><span *ngIf="success">{{success_message}}</span><span *ngIf="error">{{error_message}}</span>
+			  <svg class="progress2" viewBox="0 0 210.0 55.0">
+				<path id="M" class="path" d="M5.0 50.0 V5.0 L24.0 25.0 L26.0 25.0 L45.0 5.0 V50.0"/> 
+				<path id="I" class="path" d="M60.0 50.0 V5.0"/> 
+				<path id="K" class="path" d="M75.0 5.0 V50.0"/>
+				<path id="K2" class="path" d="M75.0 27.5 L95.0 5.0"/> 
+				<path id="K3" class="path" d="M75.0 27.5 L95.0 50.0"/> 
+				<path id="A" class="path" d="M110.0 50.0 V5.0 H130.0 V50.0"/>
+				<path id="KNOB" class="path" d="M125.0 30.0 L 125.01 30.0"/> 
+				<path id="S" class="path" d="M145.0 50.0 C175.0 50.0, 175.0 25.0, 155.0 25.0 C135.0 25.0, 135.0 5.0, 165.0, 5.0"/> 
+				<path id="O" class="path" d="M 180.0 22.5 C180.0 0.0, 205.0 0.0, 205.0 22.5 V32.0 C205.0 55.0, 180.0 55.0, 180.0 32.0 V22.5"/> 
+					<!--M5.0 50.0 V5.0 L24.0 25.0 L26.0 25.0 L45.0 5.0 V50.0
+					M60.0 50.0 V5.0 
+					M75.0 5.0 V50.0 M75.0 27.5 L95.0 5.0 M75.0 27.5 L95.0 50.0 
+					M110.0 50.0 V5.0 H130.0 V50.0 M125.0 30.0 L 125.01 30.0  
+					M145.0 50.0	C165.0 40.0, 165.0 30.0, 155.0 20.0 C145.0 20.0, 145.0 10.0, 165.0, 5.0
+					M 180.0 22.5 C180.0 0.0, 205.0 0.0, 205.0 22.5 V32.0 C205.0 55.0, 180.0 55.0, 180.0 32.0 V22.5"/>-->
+					
+					
+					
+					
+					
+					
+					
+					
+				<!--<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="
+				5.0,50.0 5.0,5.0 24.0,25.0 26.0,25.0 45.0,5.0 45.0,50.0 60.0,50.0 60.0,5.0 75.0,5.0 75.0,50.0 75.0,27.5 95.0,5.0 75.0,27.5 95.0,50.0 110.0,50.0 110.0,5.0 130.0,5.0 130.0,50.0 145.0,50.0 
+				155.0,48.0 160.0,40.0 158.0,38.0 150.0,25.0 145.0,15.0 150.0,6.0 160.0,5.0" />-->
+				<!--5.0,50.0 5.0,5.0 24.0,25.0 26.0,25.0 45.0,5.0 45.0,50.0 M-->
+				<!-- 26.844,50.531 9.975,41.525 9.975,21.517 26.844,31.531 43.714,21.125 43.714,42.047 26.844,50.531 26.844,31.531 9.975,21.517 
+				26.844,11.531 43.714,21.125 26.844,31.531-->
+			  </svg>
+            </form>
+          </div>
+        <div class="col-sm-4"></div>
+      </div>
+    <footer-comp></footer-comp>
+</div>

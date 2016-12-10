@@ -1,0 +1,37 @@
+{
+  "name": "sherlockintelligenceapp",
+  "version": "0.0.1",
+  "description": "Sherlock Intelligence App",
+  "scripts": {
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "lite": "lite-server",
+    "postinstall": "typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "~2.0.1",
+    "@angular/compiler": "~2.0.1",
+    "@angular/core": "~2.0.1",
+    "@angular/forms": "~2.0.1",
+    "@angular/http": "~2.0.1",
+    "@angular/material": "^2.0.0-alpha.9-3",
+    "@angular/platform-browser": "~2.0.1",
+    "@angular/platform-browser-dynamic": "~2.0.1",
+    "@angular/router": "~3.0.1",
+    "@angular/upgrade": "~2.0.1",
+    "core-js": "^2.4.1"
+  },
+  "devDependencies": {
+    "angular2-schema-form": "^1.0.0-alpha.26",
+    "concurrently": "^3.0.0",
+    "lite-server": "^2.2.2",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0"
+  },
+  "engines": {
+    "node": "6.6.0"
+  }
+}

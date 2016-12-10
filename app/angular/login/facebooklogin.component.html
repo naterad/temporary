@@ -1,0 +1,36 @@
+<div class="page-facebook" id="page-top">
+	<div class="wrapper">
+		<header-comp></header-comp>
+		<div id="page-content-facebook">
+			<div class="container">
+				<div class="wide_container_2">
+					<div class="tabs">						
+						<!-- end header -->
+						<div class="tab-content">							
+							<div id="tab1" class="tab" style="display: block;">
+								<div class="col-sm-12 col-xs-12">
+									<br><br>
+									<div class="col-sm-4"></div>
+									<div class="col-sm-4">
+										<p>Facebook</p>
+										<p *ngIf="loggedIn">Thanks for logging in with facebook</p>
+										<p *ngIf="cancelledOrFailed">Sorry, you didnt log in with facebook please try again or go back to the homepage</p>
+										<p>{{loggedIn}}</p>
+										<p>{{cancelledOrFailed}}</p>
+									</div>
+									<div class="col-sm-4"></div>
+								</div>																
+								<!-- content -->
+							</div>
+						</div>
+						<!-- tab-content -->
+					</div>
+					<!-- tabs -->
+				</div>
+			</div>
+		</div>
+		<!-- end Page Content -->
+
+		<!-- <footer-comp></footer-comp> -->
+	</div>
+</div>

@@ -1,0 +1,295 @@
+<!--///
+/// MIKASO INC. ("COMPANY") CONFIDENTIAL
+/// Unpublished Copyright (c) 2016 Mikaso, Inc., All Rights Reserved.
+///
+/// NOTICE:  All information contained herein is, and remains the property of COMPANY. The intellectual and technical concepts contained
+/// herein are proprietary to COMPANY and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
+/// Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
+/// from COMPANY.  Access to the source code contained herein is hereby forbidden to anyone except current COMPANY employees, managers or contractors who have executed
+/// Confidentiality and Non-disclosure agreements explicitly covering such access.
+///
+/// The copyright notice above does not evidence any actual or intended publication or disclosure of  this source code, which includes
+/// information that is confidential and/or proprietary, and is a trade secret, of  COMPANY.   ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
+/// OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
+/// LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
+/// TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
+///-->
+
+<div class="page-property" id="page-top">
+	<!-- Wrapper -->
+	<div class="wrapper">
+		<!-- Start Header -->
+		<header-comp></header-comp>
+		<!-- End Header -->
+		<!-- Page Content -->
+		<div id="page-property-content" *ngIf="home">
+			<div class="wide_container_3 carousel-full-width">
+				<div class="tabs">
+						<div class="image" style="" [style.background-image]="'url(' + home.primary_image + ')'"></div>
+				</div>
+			</div>
+			<div class="wide-2" style="margin-top:30px;">
+				<div class="container">
+					<div class="row">
+						<aside class="pr-summary col-md-4 col-xs-12">
+							<form action="agent_profile.html">
+								<div class="col-lg-7 col-md-6 col-sm-3 col-xs-6 hl-bl">
+									<h2>{{ errorMessage }}</h2>
+									<h2>{{ home.price_cents/100 | currency:'USD':true:'1.0'}}</h2>
+									<h5 class="team-color">HOME FOR SALE</h5>
+								</div>
+								<div class="row">
+									<div class="col-md-12 col-sm-6 col-xs-12">
+										<div class="row">
+											<div class="col-lg-5 col-md-6 col-xs-6 cat-img">
+												<img src="app/images/bedroom.png" alt="">
+												<p>{{ home.bedrooms/100 + " Beds"}}</p>
+											</div>
+											<div class="col-lg-7 col-md-6 col-xs-6 cat-img cat-img">
+												<img src="app/images/bathroom.png" alt="">
+												<p>{{ home.bathrooms/100 + " Baths"}}</p>
+											</div>
+										</div>
+										<hr>
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="row">
+													<div class="col-lg-5 col-md-6 col-xs-6 cat-img">
+														<img src="app/images/square.png" alt="">
+														<p class="info_line">{{home.square_feet + " ft"}}<span class="rank">2</span></p>
+													</div>
+													<div class="col-lg-7 col-md-6 col-xs-6 cat-img">
+														<img src="app/images/garage.png" alt="">
+														<p class="info_line">{{home.garage + " Car Garage"}}</p>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-xs-12">
+														<div class="col-lg-5 col-md-6 col-xs-6 line"></div>
+														<div class="col-lg-5 col-md-6 col-xs-6 line"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr class="full-width">
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-md-12 col-sm-6 col-xs-12">
+										<span class="ffs-bs">
+											<button type="submit" class="btn btn-large btn-primary">Schedule a Tour</button>
+										</span>
+										<span class="ffs-bs">
+											<a href="/make-offer/{{home.home_id}}" class="btn btn-large btn-primary">Make an Offer</a>
+										</span>
+										<div class="col-xs-12 fav-block">
+											<div class="bookmark col-xs-6" data-bookmark-state="empty">
+												<span class="title-add">Add to Favorites</span>
+												<p class="col-xs-9 fav-text">Add to Favorites</p>
+											</div>
+											<div class="compare col-xs-6" data-compare-state="empty">
+												<span class="plus-add">Compare this Home</span>
+												<p class="fav-text">Compare</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</aside>
+						<div class="pr-info col-md-8 col-xs-12">
+							<h2>{{ home.address }}</h2>
+							<div class="map-marker"></div>
+							<h5 class="team-color">{{home.address + ", " + home.city + ", " + home.state }}</h5>
+							<p>{{ home.description }}</p>
+						</div>
+
+						<!-- <div class="pr-info col-md-8 col-xs-12">
+							<h3>Property Features:</h3>
+							<section class="block">
+								<ul class="submit-features">
+									<li class="col-md-4 col-xs-4"><div>Deck</div></li>
+									<li class="col-md-4 col-xs-4"><div>Eat-In Kitchen</div></li>
+									<li class="col-md-4 col-xs-4"><div>Family Room</div></li>
+									<li class="col-md-4 col-xs-4"><div>Fireplace</div></li>
+									<li class="col-md-4 col-xs-4"><div>Formal Dining Room</div></li>
+									<li class="col-md-4 col-xs-4"><div>Home Office</div></li>
+									<li class="col-md-4 col-xs-4"><div>Media Room</div></li>
+									<li class="col-md-4 col-xs-4"><div>Patio</div></li>
+									<li class="col-md-4 col-xs-4"><div>Walk-In Closet</div></li>
+								</ul>
+							</section>
+						</div> -->
+
+						<div class="pr-info col-md-8 col-xs-12">
+							<h3>Additional photos:</h3>
+
+							<div class="bs-example" data-example-id="simple-carousel">
+								<div class="carousel slide" id="carousel-example-generic" data-ride="carousel">
+
+									<ol class="carousel-indicators" [hidden]="images && images.length >  10">
+										<li *ngFor="let image of images;  let i=index" data-target="#carousel-example-generic" data-slide-to="0" [ngClass]="{active: i == 0}"></li>
+									</ol>
+
+									<div class="carousel-inner" role="listbox">
+
+										<div *ngFor="let image of images;  let i=index" class="item" style="margin: 0 auto; width: 100%;" [ngClass]="{active: i == 0}">
+											<img alt="" src="{{image.image_url}}">
+										</div>
+
+
+										<a href="#carousel-example-generic" class="left carousel-control" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span>											</a>
+										<a href="#carousel-example-generic" class="right carousel-control" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+									</div>
+								</div>
+							</div>
+							<br>
+
+							<!--<div class="row cust-row">
+								<div *ngFor="let image of images;  let i=index">
+									<div *ngIf="i<3" class="col-xs-3 cust-pad">
+										<div class="pr-img" [style.background-image]="'url(' + image.image_url + ')'"></div>
+									</div>
+									<div *ngIf="i==4" class="col-xs-3 cust-pad">
+										<div class="pr-img" [style.background-image]="'url(' + image.image_url + ')'">
+											<span class="filter"></span>
+											<label class="img-label" for="op">+{{images.length-4}} More</label>
+										</div>
+									</div>
+								</div>
+							</div>-->
+							<div class="row">
+								<div class="col-xs-12">
+									<!-- <h3>Video Presentation:</h3>
+									<p><iframe src="https://player.vimeo.com/video/34741214"></iframe></p> -->
+									<hr>
+									<div class="row">
+										<section class="social-block col-sm-6 col-xs-12">
+											<ul class="social">
+												<li class="social-text">SHARE:</li>
+												<li><a class="facebook" (click)="shareFacebook()" id="fb-share" target="blank"><i class="fa fa-facebook"></i></a></li>
+												<li><a class="twitter" id="twitter-share" href="https://twitter.com" target="blank"><i class="fa fa-twitter"></i></a></li>
+												<li><a class="google" id="google-plus-share" href="https://www.google.com" target="blank"><i class="fa fa-google-plus"></i></a></li>
+												<li><a class="pinterest" id="pinterest-share" href="https://www.pinterest.com" target="blank"><i class="fa fa-pinterest"></i></a></li>
+											</ul>
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end Page Content -->
+
+		<footer-comp></footer-comp>
+	</div>
+
+	<!-- Modal login, register, custom gallery, error report -->
+	<div id="login-modal-open"></div>
+	<div id="register-modal-open"></div>
+	<div class="custom-galery">
+		<input type="checkbox" class="gal" id="op">
+		<div class="lower"></div>
+		<div class="overlay overlay-hugeinc">
+			<label for="op"></label>
+			<nav>
+
+
+
+				<!-- Owl carousel -->
+				<!-- <div class="owl-carousel owl-theme carousel-full-width owl-demo-3">
+					<div class="item" style="background-image: url(http://placehold.it/950X800);"></div>
+					<div class="item" style="background-image: url(http://placehold.it/800X650);"></div>
+				</div> -->
+				<!-- End Owl carousel -->
+			</nav>
+		</div>
+	</div>
+	<div id="error-modal-open"></div>
+	<!-- End Modal login, register, custom gallery, error report -->
+
+	<!-- Use this code below only if you are using google street view -->
+	<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initialize&libraries=places"></script> -->
+
+	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfzr4EdokkUqksG8w31A4SM_9c6M-x-jk&libraries=places"></script>
+	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/markerwithlabel_packed.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.placeholder.js"></script>
+	<script type="text/javascript" src="assets/js/retina-1.1.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.raty.min.js"></script>
+	<script type="text/javascript" src="assets/js/waypoints.min.js"></script>
+	<script type="text/javascript" src="assets/js/classie.js"></script>
+	<script type="text/javascript" src="assets/js/selectize.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/custom-map.js"></script>
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+<script>
+ 	//Date picker
+ 	$(document).ready(function() {
+ 		$("#date-from").datepicker({
+ 			showOtherMonths: true,
+ 			selectOtherMonths: true
+ 		});
+ 		$("#date-to").datepicker({
+ 			showOtherMonths: true,
+ 			selectOtherMonths: true
+ 		});
+ 	});
+
+	//Google map for property page
+	function initialize() {
+		$.getScript("assets/js/locations.js", function() {
+			var latlng = {lat: 34.0098345, lng: -118.4816207};
+			var mapOptions = {
+				center: latlng,
+				zoom: 15
+			};
+			var map = new google.maps.Map(document.getElementById('map4'),
+				mapOptions);
+			var marker = new MarkerWithLabel({
+				position: latlng,
+				map: map,
+				labelContent: '<div class="marker-loaded"><div class="map-marker"><img src="app/images/f.svg" alt="" /></div></div>',
+				labelClass: "marker-style"
+			});
+			var contentString =   '<div id="mapinfo">'+
+			'<h4 class="firstHeading">St Floor Wingate House</h4>'+
+			'<h6>London, 93-107 Shaftesbury Ave, W1D 5DY</h6>';
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString
+			});
+			marker.addListener('click', function() {
+				infowindow.open(map, marker);
+			});
+			//resize for opeening and to get center of map
+			$('.map4').bind('click', function(){
+				google.maps.event.trigger(map4, 'resize');
+				map.panTo(marker.getPosition());
+			});
+
+			// Use this code below only if you are using google street view
+				var homeView = {lat: 34.0098345, lng: -118.4816207};
+			var panorama = new google.maps.StreetViewPanorama(document.getElementById('tab3'), {
+					position: homeView
+				});
+			map.setStreetView(panorama);
+			$('.street-view').bind('click', function(e){
+				setTimeout(function() {
+					google.maps.event.trigger(panorama, 'resize');
+				}, 400 );
+			});
+
+		});
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script> -->
+
+</div>

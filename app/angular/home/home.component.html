@@ -1,0 +1,222 @@
+<!--///
+/// MIKASO INC. ("COMPANY") CONFIDENTIAL
+/// Unpublished Copyright (c) 2016 Mikaso, Inc., All Rights Reserved.
+///
+/// NOTICE:  All information contained herein is, and remains the property of COMPANY. The intellectual and technical concepts contained
+/// herein are proprietary to COMPANY and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
+/// Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
+/// from COMPANY.  Access to the source code contained herein is hereby forbidden to anyone except current COMPANY employees, managers or contractors who have executed
+/// Confidentiality and Non-disclosure agreements explicitly covering such access.
+///
+/// The copyright notice above does not evidence any actual or intended publication or disclosure of  this source code, which includes
+/// information that is confidential and/or proprietary, and is a trade secret, of  COMPANY.   ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
+/// OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
+/// LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
+/// TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
+///-->
+
+
+<div class="page-homepage" id="page-top">
+
+	<div class="wrapper">
+
+		<!-- HEADER -->
+		<header-comp class="menu-wht"></header-comp>
+
+		<div id="page-content_home">
+
+			<div class="home_1">
+				<div class="header_title">
+					<h1>Real estate just got real.</h1>
+					<h4>Mikaso lets you buy and sell homes for free.</h4>
+				</div>
+
+				<!-- Home Search-->
+				<form #form="ngForm" (ngSubmit)="logForm(form.value)">
+					<div class="search">
+						<!-- <div class="selector col-md-3  col-sm-3">
+							<select class="selection" id="rent-sale" name="buy_or_sell" ngModel>
+									<option>BUYING</option>
+									<option>SELLING</option>
+								</select>
+						</div> -->
+						<div id="email-label" class="col-md-9 col-sm-9">
+							<i class="fa fa-location-arrow"></i>
+							<input  id="search_field" value="text" class="form-control" placeholder="City, State"  (keyup)="onKey($event)" name="input" ngModel>
+						</div>
+						<span class="ffs-bs col-md-3 col-sm-3"><button type="submit" class="btn btn-small btn-solid">Go</button></span>
+					</div>
+				</form>
+			</div>
+
+			<div class="container">
+				<div class="explore">
+					<h2>See What's on Mikaso</h2>
+					<h5><i class="fa fa-map-marker"></i>Provo, UT <span class="team-color">Change location</span></h5>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<a href="search" class="exp-img" style="background:url('app/images/interior.jpg') center;background-size: cover;">
+							<span class="filter"></span>
+							<div class="img-info">
+								<h3>Single Family Homes</h3>
+								<h6>274 Properties</h6>
+								<span class="ffs-bs btn btn-small btn-solid">Check it Out</span>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<a href="search" class="exp-img" style="background:url('app/images/new-builds.jpg') center;background-size: cover;">
+							<span class="filter"></span>
+							<div class="img-info">
+								<h3>New Builds</h3>
+								<h6>156 Properties</h6>
+								<span class="ffs-bs btn btn-small btn-solid">Check it Out</span>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<a href="search" class="exp-img" style="background:url('app/images/school.jpg') center;background-size: cover;">
+							<span class="filter"></span>
+							<div class="img-info">
+								<h3>Great Schools</h3>
+								<h6>178 Properties</h6>
+								<span class="ffs-bs btn btn-small btn-solid">Check it Out</span>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<a href="search" class="exp-img" style="background:url('app/images/swings.jpg') center;background-size: cover;">
+							<span class="filter"></span>
+							<div class="img-info">
+								<h3>Near a Park</h3>
+								<h6>212 Properties</h6>
+								<span class="ffs-bs btn btn-small btn-solid">Check it Out</span>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-8">
+						<a href="search" class="exp-img" style="background:url('app/images/swimming-pool.jpg') center;background-size: cover;">
+							<span class="filter"></span>
+							<div class="img-info">
+								<h3>Homes with a Pool</h3>
+								<h6>17 Properties</h6>
+								<span class="ffs-bs btn btn-small btn-solid">Check it Out</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- end container -->
+
+			<div class="wide-1">
+				<div class="container rel-img">
+					<div class="col-md-8 col-sm-8 ab-us">
+						<h2 style="margin-top:40px">Why List on Mikaso</h2>
+						<div class="row">
+							<div class="col-md-6 col-sm-6 ex-block">
+								<h4><i class="fa fa-circle-o"></i>Save Thousands</h4>
+								<p>Most real estate agents will make a 3-6% commission on your home. You can save thousands by using Mikaso.</p>
+							</div>
+							<div class="col-md-6 col-sm-6 ex-block">
+								<h4><i class="fa fa-circle-o"></i>Paperwork: Incredibly Easy</h4>
+								<p>Mikaso intelligently helps you make offers and counteroffers on your home, providing legally vetted contracts so
+									you know you're safe.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-sm-6 ex-block">
+								<h4><i class="fa fa-circle-o"></i>All in One Place</h4>
+								<p>Finding professionals to help with all the aspects of selling your home can be difficult. Mikaso gives you access
+									and reviews of all of them.</p>
+							</div>
+							<div class="col-md-6 col-sm-6 ex-block">
+								<h4><i class="fa fa-circle-o"></i>We're here for you</h4>
+								<p>Real Estate decisions can be stressful. If you ever have a question about Mikaso's services, we're here to help!</p>
+							</div>
+						</div>
+						<span class="ffs-bs"><a href="list" class="btn btn-large btn-primary">List your home</a></span>
+					</div>
+				</div>
+				<div class="ab-us-img col-md-4 col-sm-4"></div>
+			</div>
+			<!-- end wide-1 -->
+
+			<div class="wide-2">
+				<div class="container">
+					<div class="explore">
+						<h2>Recent Listings</h2>
+					</div>
+					<div class="loader" [hidden]="!loading"></div>
+
+					<div *ngFor=" let home of homes;  let i=index">
+						<div *ngIf="i<5" class="row white">
+							<div class="col-md-3 col-sm-3 prp-img">
+								<div class="exp-img-2" [style.background-image]="'url(' + home.primary_image + ')'">
+									<span class="filter"></span>
+									<span class="ffs-bs"><label (click)="gotoProperty(home)" class="btn btn-small btn-solid">browse photos</label></span>
+									<div class="overlay">
+										<div class="img-counter"></div>
+									</div>
+								</div>
+							</div>
+							<div class="item-info col-lg-7 col-md-6 col-sm-6">
+								<h4 ng-if="$index != 0" (click)="gotoProperty(home)">{{home.address + ", " + home.city + ", " + home.state + ", " + home.zip_code}}</h4>
+								<!--<h4 ng-if="$index != 0" (click)="gotoProperty(home)">{{home.title}}</h4>-->
+								<!--<p class="team-color">{{home.address + ", " + home.city + ", " + home.state + ", " + home.zip_code}}</p>-->
+								<br>
+								<div class="block">
+									<div class="col-md-3 col-sm-3 col-xs-3 cat-img">
+										<img src="app/images/bedroom.png" alt="">
+										<p class="info-line">{{home.bedrooms/100 + " Bedrooms"}}</p>
+									</div>
+									<div class="col-md-3 col-sm-3 col-xs-3 cat-img">
+										<img src="app/images/bathroom.png" alt="">
+										<p class="info-line">{{home.bathrooms/100 + " Bathrooms"}}</p>
+									</div>
+									<div class="col-md-3 col-sm-3 col-xs-3 cat-img">
+										<img src="app/images/square.png" alt="">
+										<p class="info-line">{{home.square_feet + " ft"}}<span class="rank">2</span></p>
+									</div>
+									<div class="col-md-3 col-sm-3 col-xs-3 cat-img">
+										<img src="app/images/garage.png" alt="">
+										<p class="info-line">{{home.garage + " Car Garage"}}</p>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3 line"></div>
+								<div class="col-md-3 col-sm-3 col-xs-3 line"></div>
+								<div class="col-md-3 col-sm-3 col-xs-3 line"></div>
+								<div class="col-md-3 col-sm-3 col-xs-3 line"></div>
+								<hr>
+
+								<p>{{ home.description | truncate : 170 }}</p>
+							</div>
+							<div class="item-price col-lg-2 col-md-3 col-sm-3 col-xs-12">
+								<div class="sum col-sm-12 col-xs-6">
+									<p>{{home.price_cents/100 | currency:'USD':true:'1.0'}}</p>
+									<p class="team-color">{{home.status | uppercase }}</p>
+								</div>
+								<span ng-if="$index != 0" class="ffs-bs col-xs-12 btn-half-wth" (click)="gotoProperty(home)"><p class="btn btn-transparent btn-small">learn more <i class="fa fa-caret-right"></i></p></span>
+								<div class="sum favorite col-sm-12 col-xs-6">
+									<div class="bookmark col-xs-3" data-bookmark-state="empty">
+										<span class="title-add">Add to favorites</span>
+									</div>
+									<p class="col-xs-3">Fav</p>
+									<div class="compare col-xs-3" data-compare-state="empty">
+										<span class="plus-add">Add to compare</span>
+									</div>
+									<p class="col-xs-3">Comp</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<span class="ffs-bs bottom"><a href="search" class="btn btn-transparent btn-large">Explore Mikaso</a></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- FOOTER -->
+		<footer-comp></footer-comp>
+
+	</div>
+</div>

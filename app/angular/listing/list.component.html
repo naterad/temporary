@@ -1,0 +1,478 @@
+<!-- <div>
+  <form #form="ngForm" (ngSubmit)="logForm(form.value)">
+    <label>Firstname:</label>
+  <input type="text" name="firstname" ngModel>
+  <br>
+  <label>Lastname:</label>
+  <input type="text" name="lastname" ngModel>
+
+  <button type="submit">Submit</button>
+  </form>
+</div> -->
+
+<!--///
+/// MIKASO INC. ("COMPANY") CONFIDENTIAL
+/// Unpublished Copyright (c) 2016 Mikaso, Inc., All Rights Reserved.
+///
+/// NOTICE:  All information contained herein is, and remains the property of COMPANY. The intellectual and technical concepts contained
+/// herein are proprietary to COMPANY and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
+/// Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
+/// from COMPANY.  Access to the source code contained herein is hereby forbidden to anyone except current COMPANY employees, managers or contractors who have executed
+/// Confidentiality and Non-disclosure agreements explicitly covering such access.
+///
+/// The copyright notice above does not evidence any actual or intended publication or disclosure of  this source code, which includes
+/// information that is confidential and/or proprietary, and is a trade secret, of  COMPANY.   ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
+/// OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
+/// LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
+/// TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
+///-->
+
+<!-- <head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/selectize.css" type="text/css">
+	<title>Mikaso | List Property</title>
+</head> -->
+
+<div class="page-property" id="page-top">
+
+	<div class="wrapper">
+		<header-comp></header-comp>
+
+		<div id="page-content">
+			<div class="wide-4">
+				<br>
+				<div class="container">
+					<div class="explore">
+						<h2>List Your Home on Mikaso</h2>
+					</div>
+					<br>
+					<!-- <form id="form-submit" class="form-submit" action="thank_you_page.html"> -->
+					<form #form="ngForm" (ngSubmit)="logForm(form.value)">
+
+						<div class="wide-3">
+							<div class="explore">
+								<div class="property-map-marker"><img src="app/images/marker-full.png" alt="" /><span class="marker-number">1</span></div>
+								<div class="prt-cont">
+									<div class="property-title">
+										<h3>Location</h3>
+									</div>
+								</div>
+							</div>
+							<div class="prt-cont">
+								<hr>
+								<div class="row">
+									<div class="location-info col-md-12 col-sm-12 col-xs-12">
+										<div class="input-group">
+											<label>Street Address</label>
+											<input id="address" type="text" class="form-control" name="address" placeholder="Enter Property Address" required ngModel>
+										</div>
+										<div class="input-group">
+											<label>City</label>
+											<input type="text" class="form-control" name="city" placeholder="City Name" required ngModel>
+										</div>
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<div class="form-group">
+													<label>State</label>
+													<select class="selection" name="state" ngModel>
+												<option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+											</select>
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<div class="form-group">
+													<label>ZIP Code</label>
+													<input type="text" class="form-control" placeholder="- - - - -" name="zip" ngModel>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- <div class="location-map col-md-6 col-sm-6 col-xs-12">
+										<div class="input-group">
+											<label for="address-map">Place on map</label>
+											<input type="text" class="form-control" id="address-map" name="place" ngModel>
+											<i class="fa fa-search"></i>
+										</div>
+										<div id="submit-map"></div>
+									</div> -->
+								</div>
+							</div>
+							<div class="explore">
+								<div class="property-map-marker"><img src="app/images/marker-full.png" alt="" /><span class="marker-number">2</span></div>
+								<div class="prt-cont">
+									<div class="property-title">
+										<h3>Property Details</h3>
+									</div>
+								</div>
+							</div>
+							<div class="prt-cont">
+								<hr>
+								<div class="row">
+									<div class=" col-md-12 col-sm-12">
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<div class="form-group">
+													<label>Bedrooms</label>
+													<select class="selection" name="bedrooms" ngModel>
+														<option>1</option>
+														<option>2</option>
+														<option>3</option>
+                            							<option>4</option>
+														<option>5</option>
+                            							<option>6</option>
+														<option>7+</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<div class="form-group">
+													<label>Bathrooms</label>
+													<select class="selection" name="bathrooms" ngModel>
+														<option>1</option>
+														<option>2</option>
+														<option>3</option>
+                            							<option>4</option>
+														<option>5</option>
+                            							<option>6</option>
+														<option>7+</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<div class="form-group">
+													<label>Square Footage:</label>
+													<input type="text" class="form-control" placeholder="Finished Sq Ft" pattern="\d*" required name="sqft" ngModel>
+													<div class="checkbox"><label><input type="checkbox" checked="checked" name="sqft_check" ngModel>User supplied Sq Ft</label></div>
+													<br>
+													<label>Year Built</label>
+													<input type="text" class="form-control" placeholder="Year Built" pattern="\d*" required name="year_built" ngModel>
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<div class="form-group">
+													<label>Garage Count</label>
+													<select class="selection" name="garage" ngModel>
+														<option>0</option>
+														<option>1</option>
+														<option>2</option>
+														<option>3</option>
+                            							<option>4+</option>
+													</select>
+
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div id="property-features" class="block">
+												<div class="row" style="margin-left: 0px;">
+													<ul class="submit-features">
+														<li class="col-md-4 col-sm-4 col-xs-6">
+															<div class="checkbox"><label><input type="checkbox" checked="checked" name="deck" ngModel>Deck</label></div>
+														</li>
+														<li class="col-md-4 col-sm-4 col-xs-6">
+															<div class="checkbox"><label><input type="checkbox" name="eat_in_kitchen" ngModel>Eat-In Kitchen</label></div>
+														</li>
+														<li class="col-md-4 col-sm-4 col-xs-6">
+															<div class="checkbox"><label><input type="checkbox" name="family_room" ngModel>Family Room</label></div>
+														</li>
+														<li class="col-md-4 col-sm-4 col-xs-6">
+															<div class="checkbox"><label><input type="checkbox" name="fireplace" ngModel>Fireplace</label></div>
+														</li>
+														<li class="col-md-4 col-sm-4 col-xs-6">
+															<div class="checkbox"><label><input type="checkbox" name="formal_dining_room" ngModel>Formal Dining Room</label></div>
+														</li>
+														<li class="col-md-4 col-sm-4 col-xs-6">
+															<div class="checkbox"><label><input type="checkbox" name="home_office" ngModel>Home Office</label></div>
+														</li>
+														<li class="col-md-4 col-sm-4 col-xs-6">
+															<div class="checkbox"><label><input type="checkbox" name="media_room" ngModel>Media Room</label></div>
+														</li>
+														<li class="col-md-4 col-sm-4 col-xs-6">
+															<div class="checkbox"><label><input type="checkbox" name="patio" ngModel>Patio</label></div>
+														</li>
+														<li class="col-md-4 col-sm-4 col-xs-6">
+															<div class="checkbox"><label><input type="checkbox" name="walk_in_closet" ngModel>Walk-In Closet</label></div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<!-- <div class=" col-md-4 col-sm-4 summary-image">
+										<label>Featured Photo</label>
+										<div class="featured-image-block">
+											<img src="app/images/camera.png" alt="" class="property-icon camera">
+											<h3> Add Featured Photo</h3>
+											<h5 class="team-color">Typically, the featured photo shows the home from the curb.</h5>
+											<input id="file-upload" type="file" class="file" required multiple data-show-upload="false" data-show-caption="false" data-show-remove="false"
+												accept="image/jpeg,image/png" data-browse-class="btn btn-default" data-browse-label="Add Files" name="featured_photo"
+												ngModel>
+											<label for="file-upload">
+												<img src="app/images/upload.png" alt="" class="image-upload-icon">Add Photo
+											</label>
+										</div>
+									</div> -->
+								</div>
+							</div>
+							<div class="explore">
+								<div class="property-map-marker"><img src="app/images/marker-full.png" alt="" /><span class="marker-number">3</span></div>
+								<div class="prt-cont">
+									<div class="property-title">
+										<h3>Listing Information</h3>
+									</div>
+								</div>
+							</div>
+							<div class="prt-cont">
+								<hr>
+								<div class="form-group">
+									<label>Property Title</label>
+									<p class="add-exp">A brief description of your property. (Maximum 250 charachters)</p>
+									<input type="text" class="form-control" placeholder="ex. Charming mid-century modern 5 bedroom" required name="title" ngModel>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label>Asking Price</label>
+											<input type="text" class="form-control" placeholder="$" pattern="\d*" required name="price" ngModel>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label>Buyer's Agent %</label>
+											<select class="selection" name="buyers_agent_percent" ngModel>
+												<option>0%</option>
+												<option>1%</option>
+												<option>2%</option>
+                        						<option>3%</option>
+                        						<option>4%</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<p class="add-exp">Real Estate Agents play an important role for many qualified buyers. The amount you offer to a potential buyer's
+											agent can increase the chances that the agent will bring them to see your home. Make sure to consider this percentage
+											in your asking price. Traditionally, the rate is 3%.</p>
+									</div>
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label for="text-area-2">Description:</label>
+											<textarea id="text-area-2" rows="6" cols="45" class="form-control" name="description" ngModel></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="explore">
+								<div class="property-map-marker"><img src="app/images/marker-full.png" alt="" /><span class="marker-number">4</span></div>
+								<div class="prt-cont">
+									<div class="property-title">
+										<h3>Media Files</h3>
+										<h5 class="team-color">Add pictures, videos, and floor plans to help people see just how great your home is!</h5>
+									</div>
+								</div>
+							</div>
+							<div class="prt-cont media features">
+								<hr>
+								<div class="row">
+									<div class=" col-md-6 col-sm-6 summary-image">
+										<div class="featured-image-block">
+											<img src="app/images/camera.png" alt="" class="property-icon camera">
+											<h3> Add Featured Photo</h3>
+											<h5 class="team-color">Typically, the featured photo shows the home from the curb.</h5>
+											<label for="file-upload">
+												<img src="app/images/upload.png" alt="" class="image-upload-icon">Add Photo
+											</label>
+											<input id="file-upload" style="display: none;" type="file" class="file" required multiple data-show-upload="false" data-show-caption="false" data-show-remove="false"
+												accept="image/jpeg,image/png" data-browse-class="" data-browse-label="Add Files" name="featured_photo"
+												ngModel>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<div class="featured-image-block">
+											<img src="app/images/gallery.png" alt="" class="property-icon gallery">
+											<h3>Photo Gallery</h3>
+											<h5 class="team-color">Add more pictures of the home's interior and details</h5>
+											<input id="imageUploader" style="display: none;" type="file" class="file" required multiple data-show-upload="false" data-show-caption="false" data-show-remove="false"
+												accept="image/jpeg,image/png" data-browse-class="btn btn-default" data-browse-label="Add Files" name="photo_gallery"
+												ngModel>
+											<label for="imageUploader">
+												<img src="app/images/upload.png" alt="" class="image-upload-icon">Add Pictures
+											</label>
+										</div>
+									</div>
+									<div class="col-md-8 col-sm-8 col-xs-12">
+										<!-- <div *ngFor="let image in images"> -->
+										<div *ngFor="let image of images;  let i=index">
+											<img src="{{image.image_url}}" height=200px; width=200px;/>
+										</div>
+									</div>
+									<!-- <div class="col-xs-12">
+										Rialto stuff
+										<div *ngFor="let photographyOffer of photographyOffers; let j=index">
+											hey
+											<div>{{ photographyOffer.comment }}</div>
+											<div>{{ photographyOffer.business_id }}</div>
+										</div>
+									</div> -->
+								</div>
+								<div class="input-group">
+									<label>Video Link</label>
+									<input type="text" class="form-control" placeholder="Add URL for a video of your property" name="video" ngModel>
+								</div>
+								<span class="ffs-bs"><button type="submit" class="btn btn-large btn-primary">List on Mikaso</button></span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<footer-comp></footer-comp>
+	</div>
+
+
+	<!-- <div id="login-modal-open"></div>
+	<div id="register-modal-open"></div>
+
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfzr4EdokkUqksG8w31A4SM_9c6M-x-jk&libraries=places"></script>
+	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/icheck.min.js"></script>
+	<script type="text/javascript" src="assets/js/retina-1.1.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/fileinput.min.js"></script>
+	<script type="text/javascript" src="assets/js/markerwithlabel_packed.js"></script>
+	<script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="assets/js/selectize.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.placeholder.js"></script>
+
+	<script type="text/javascript" src="assets/js/custom-map.js"></script>
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+
+	<script type="text/javascript" src="assets/js/ie.js"></script>
+
+	<script>
+		var _latitude = 34.0195;
+		var _longitude = -118.4912;
+		google.maps.event.addDomListener(window, 'load', initSubmitMap(_latitude,_longitude));
+		function initSubmitMap(_latitude,_longitude){
+			var mapCenter = new google.maps.LatLng(_latitude,_longitude);
+			var mapOptions = {
+				zoom: 14,
+				center: mapCenter,
+				disableDefaultUI: false
+			};
+			var mapElement = document.getElementById('submit-map');
+			var map = new google.maps.Map(mapElement, mapOptions);
+			var marker = new MarkerWithLabel({
+				position: mapCenter,
+				map: map,
+				icon: 'app/images/marker-h.png',
+				labelAnchor: new google.maps.Point(50, 0),
+				draggable: true
+			});
+			$('#submit-map').removeClass('fade-map');
+			google.maps.event.addListener(marker, "mouseup", function (event) {
+				var latitude = this.position.lat();
+				var longitude = this.position.lng();
+				$('#latitude').val( this.position.lat() );
+				$('#longitude').val( this.position.lng() );
+			});
+
+			//Autocomplete
+			var input = /** @type {HTMLInputElement} */( document.getElementById('address-map') );
+			var autocomplete = new google.maps.places.Autocomplete(input);
+			autocomplete.bindTo('bounds', map);
+			google.maps.event.addListener(autocomplete, 'place_changed', function() {
+				var place = autocomplete.getPlace();
+				if (!place.geometry) {
+					return;
+				}
+				if (place.geometry.viewport) {
+					map.fitBounds(place.geometry.viewport);
+				} else {
+					map.setCenter(place.geometry.location);
+					map.setZoom(15);
+				}
+				marker.setPosition(place.geometry.location);
+				marker.setVisible(true);
+				$('#latitude').val( marker.getPosition().lat() );
+				$('#longitude').val( marker.getPosition().lng() );
+				var address = '';
+				if (place.address_components) {
+					address = [
+					(place.address_components[0] && place.address_components[0].short_name || ''),
+					(place.address_components[1] && place.address_components[1].short_name || ''),
+					(place.address_components[2] && place.address_components[2].short_name || '')
+					].join(' ');
+				}
+			});
+	}
+	function success(position) {
+		initSubmitMap(position.coords.latitude, position.coords.longitude);
+		$('#latitude').val( position.coords.latitude );
+		$('#longitude').val( position.coords.longitude );
+	}
+	</script> -->
+</div>

@@ -3,9 +3,6 @@ var express = require('express');
 var app = express(); 								// create our app w/ express
 var port = process.env.PORT || 8080; 				// set the port
 
-// require db
-// var db = require('node/queries');
-
 // configuration
 app.use(express.static(__dirname + '/'));
 app.all('*', function (req, res) {

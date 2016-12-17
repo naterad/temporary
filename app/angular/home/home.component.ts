@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   moduleId: module.id,
   selector: 'home-page',
@@ -17,5 +18,5 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-  
+
 }

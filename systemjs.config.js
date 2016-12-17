@@ -18,11 +18,12 @@
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       '@ng-bootstrap/ng-bootstrap': 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
+      '@angular/material': 'npm:@angular/material/material.umd.js',
 
       // other libraries
       'rxjs': 'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
-      'primeng': 'node_modules/primeng'
+      // 'primeng': 'node_modules/primeng'
     },
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -30,7 +31,7 @@
       app: { main: './main.js', defaultExtension: 'js' },
       rxjs: { defaultExtension: 'js' },
       'angular-in-memory-web-api': { main: './index.js', defaultExtension: 'js' },
-      'primeng': { defaultExtension: 'js' }
+      // 'primeng': { defaultExtension: 'js' }
     }
   });
 })(this);

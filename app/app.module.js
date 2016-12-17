@@ -10,30 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var core_2 = require("@angular/core");
-// import { MaterialModule } from '@angular/material';
+var material_1 = require("@angular/material");
 var http_1 = require("@angular/http");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var forms_2 = require("@angular/forms");
 var app_component_1 = require("./app.component");
-var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var home_component_1 = require("./angular/home/home.component");
 var header_component_1 = require("./angular/common/header.component");
 var footer_component_1 = require("./angular/common/footer.component");
 var app_routing_1 = require("./app.routing");
 //--PrimeNG Modules--
-var primeng_1 = require("primeng/primeng");
-var primeng_2 = require("primeng/primeng");
-var primeng_3 = require("primeng/primeng");
-var primeng_4 = require("primeng/primeng");
-var primeng_5 = require("primeng/primeng");
-var primeng_6 = require("primeng/primeng");
-var primeng_7 = require("primeng/primeng");
-var primeng_8 = require("primeng/primeng");
-var primeng_9 = require("primeng/primeng");
-var primeng_10 = require("primeng/primeng");
-var primeng_11 = require("primeng/primeng");
-var primeng_12 = require("primeng/primeng");
+// import { SliderModule } from 'primeng/primeng';
+// import { GrowlModule } from 'primeng/primeng';
+// import { DataListModule } from 'primeng/primeng';
+// import { CalendarModule } from 'primeng/primeng';
+// import { CheckboxModule } from 'primeng/primeng';
+// import { InputMaskModule } from 'primeng/primeng';
+// import { InputSwitchModule } from 'primeng/primeng';
+// import { ToggleButtonModule } from 'primeng/primeng';
+// import { DropdownModule } from 'primeng/primeng';
+// import { TooltipModule } from 'primeng/primeng';
+// import { SelectButtonModule } from 'primeng/primeng';
+// import { DialogModule } from 'primeng/primeng';
 //Include all modules here
 var AppModule = (function () {
     function AppModule() {
@@ -48,22 +47,9 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             forms_2.ReactiveFormsModule,
-            ng_bootstrap_1.NgbModule.forRoot(),
-            // MaterialModule.forRoot(),
+            // NgbModule.forRoot(),
+            material_1.MaterialModule.forRoot(),
             app_routing_1.routing,
-            //--PrimeNG Modules--
-            primeng_1.SliderModule,
-            primeng_2.GrowlModule,
-            primeng_3.DataListModule,
-            primeng_4.CalendarModule,
-            primeng_5.CheckboxModule,
-            primeng_6.InputMaskModule,
-            primeng_7.InputSwitchModule,
-            primeng_8.ToggleButtonModule,
-            primeng_9.DropdownModule,
-            primeng_10.TooltipModule,
-            primeng_11.SelectButtonModule,
-            primeng_12.DialogModule
         ],
         //Declare components here
         declarations: [

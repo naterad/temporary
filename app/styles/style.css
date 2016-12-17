@@ -19,6 +19,10 @@ a h1, a h2, a h3 {
 
 }
 body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+md-toolbar {
 
 }
 h1 {

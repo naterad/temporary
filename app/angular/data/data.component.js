@@ -9,21 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var HeaderComponent = (function () {
-    function HeaderComponent() {
+var router_1 = require("@angular/router");
+var DataComponent = (function () {
+    function DataComponent(router) {
+        this.router = router;
+        console.log("this gets called first. Both get called on page load");
     }
-    HeaderComponent.prototype.ngOnInit = function () { };
-    return HeaderComponent;
+    DataComponent.prototype.ngOnInit = function () {
+        console.log("this gets called second. Both get called on page load");
+    };
+    return DataComponent;
 }());
-HeaderComponent = __decorate([
+DataComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'header-comp',
-        templateUrl: 'header.component.html',
+        selector: 'data-comp',
+        templateUrl: 'data.component.html',
         providers: [],
-        styleUrls: ['header.component.css']
+        styleUrls: ['data.component.css']
     }),
-    __metadata("design:paramtypes", [])
-], HeaderComponent);
-exports.HeaderComponent = HeaderComponent;
-//# sourceMappingURL=header.component.js.map
+    __metadata("design:paramtypes", [router_1.Router])
+], DataComponent);
+exports.DataComponent = DataComponent;
+//# sourceMappingURL=data.component.js.map

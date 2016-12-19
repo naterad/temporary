@@ -17,22 +17,11 @@ var forms_1 = require("@angular/forms");
 var forms_2 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./angular/home/home.component");
+var login_component_1 = require("./angular/login/login.component");
+var data_component_1 = require("./angular/data/data.component");
 var header_component_1 = require("./angular/common/header.component");
 var footer_component_1 = require("./angular/common/footer.component");
 var app_routing_1 = require("./app.routing");
-//--PrimeNG Modules--
-// import { SliderModule } from 'primeng/primeng';
-// import { GrowlModule } from 'primeng/primeng';
-// import { DataListModule } from 'primeng/primeng';
-// import { CalendarModule } from 'primeng/primeng';
-// import { CheckboxModule } from 'primeng/primeng';
-// import { InputMaskModule } from 'primeng/primeng';
-// import { InputSwitchModule } from 'primeng/primeng';
-// import { ToggleButtonModule } from 'primeng/primeng';
-// import { DropdownModule } from 'primeng/primeng';
-// import { TooltipModule } from 'primeng/primeng';
-// import { SelectButtonModule } from 'primeng/primeng';
-// import { DialogModule } from 'primeng/primeng';
 //Include all modules here
 var AppModule = (function () {
     function AppModule() {
@@ -47,7 +36,6 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             forms_2.ReactiveFormsModule,
-            // NgbModule.forRoot(),
             material_1.MaterialModule.forRoot(),
             app_routing_1.routing,
         ],
@@ -55,6 +43,8 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             home_component_1.HomeComponent,
+            login_component_1.LoginComponent,
+            data_component_1.DataComponent,
             header_component_1.HeaderComponent,
             footer_component_1.FooterComponent
         ],

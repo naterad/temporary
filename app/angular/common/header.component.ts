@@ -6,7 +6,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 	selector: 'header-comp',
 	templateUrl: 'header.component.html',
 	providers: [],
-	styleUrls: []
+	styleUrls: ['header.component.css']
 })
 
 export class HeaderComponent implements OnInit {

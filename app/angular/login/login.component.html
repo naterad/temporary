@@ -1,0 +1,12 @@
+<br><br>
+<form #f="ngForm" style="text-align:center;" (ngSubmit)="login()">
+  <md-input-container>
+    <input md-input placeholder="Username" name="username" [(ngModel)]="user.username" required>
+  </md-input-container>
+  <br>
+  <md-input-container>
+    <input md-input placeholder="Password" name="password" [(ngModel)]="user.password" required>
+  </md-input-container>
+  <br>
+  <button md-button type="submit" [disabled]="!f.valid">Login</button>
+</form>

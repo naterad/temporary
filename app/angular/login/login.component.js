@@ -9,21 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var HeaderComponent = (function () {
-    function HeaderComponent() {
+var router_1 = require("@angular/router");
+var LoginComponent = (function () {
+    function LoginComponent(router) {
+        this.router = router;
+        this.user = {};
     }
-    HeaderComponent.prototype.ngOnInit = function () { };
-    return HeaderComponent;
+    LoginComponent.prototype.ngOnInit = function () { };
+    LoginComponent.prototype.login = function () {
+        console.log(this.user);
+        var link = ['/data'];
+        this.router.navigate(link);
+    };
+    return LoginComponent;
 }());
-HeaderComponent = __decorate([
+LoginComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'header-comp',
-        templateUrl: 'header.component.html',
+        selector: 'login-comp',
+        templateUrl: 'login.component.html',
         providers: [],
-        styleUrls: ['header.component.css']
+        styleUrls: ['login.component.css']
     }),
-    __metadata("design:paramtypes", [])
-], HeaderComponent);
-exports.HeaderComponent = HeaderComponent;
-//# sourceMappingURL=header.component.js.map
+    __metadata("design:paramtypes", [router_1.Router])
+], LoginComponent);
+exports.LoginComponent = LoginComponent;
+//# sourceMappingURL=login.component.js.map

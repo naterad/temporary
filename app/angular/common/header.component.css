@@ -1,0 +1,16 @@
+
+.home-header {
+  background-color: #528FA6;
+  color:white;
+}
+
+@media screen and (min-width: 600px)  and (max-width: 960px) {
+    .home-header {
+
+    }
+}
+@media screen and (max-width: 600px) {
+    .home-header {
+
+    }
+}
